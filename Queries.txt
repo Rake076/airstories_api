@@ -1,0 +1,15 @@
+CREATE TABLE `nodejs-login`.`users` ( `user_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Stores the ID of users' , `username` VARCHAR(50) NOT NULL , `email` VARCHAR(100) NOT NULL , `password` VARCHAR(100) NOT NULL , `story_count` INT(100) NOT NULL COMMENT 'Counts how many stories user has written' , PRIMARY KEY (`user_id`)) ENGINE = InnoDB;
+
+
+For Short Stories
+
+CREATE TABLE `air-stories`.`short_stories`(
+    `shortID` INT(100) NOT NULL AUTO_INCREMENT,
+    `user_id` INT (11) NOT NULL,
+    `shortTitle` VARCHAR(100) NOT NULL,
+    `shortStory` TEXT NOT NULL,
+    `shortGenre` VARCHAR(100) NOT NULL,
+    `app_count` INT(10) NOT NULL,
+    PRIMARY KEY(`shorts_id`),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+) ENGINE = INNODB;
